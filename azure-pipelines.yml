@@ -20,7 +20,7 @@ stages:
   displayName: Build stage 
   jobs:
   - job: ASPNetCoreBuild
-    displayname: 'NetCore Build and Publish Artfacts'
+    displayname: NetCore Build and Publish Artfacts
     pool:
       vmImage: $(vmImageName)
     

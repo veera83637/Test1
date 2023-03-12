@@ -9,9 +9,15 @@ trigger:
 pool:
   vmImage: windows-latest
 
-jobs:
- - job: 'Agent_job'
-   displayName: Buid job 
-   steps:
-     - script: echo Hellow ,World!
-       displayName: 'Run one line script'
+variables:
+   - name: my-bare-variable
+     value: 'value of my bare variable'
+   - group: my-variable-group
+   - name: 'my passed variable'
+     value: $[variables.myvariable]
+steps:
+  - script: echo.$(my-bare-variable)
+  - script: echo.$(myvariable)
+  
+
+

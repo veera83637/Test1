@@ -20,7 +20,7 @@ stages:
   displayName: Build stage 
   jobs:
   - job: ASPNetCoreBuild
-    displayname: NetCore Build and Publish Artfacts
+    displayName: NetCore Build and Publish Artfacts
     pool:
       vmImage: $(vmImageName)
     
@@ -47,9 +47,9 @@ stages:
        publishLocation: 'Container'
 
 - stage: Deploy
-  displayname: DeployStage
+  displayName: DeployStage
   dependsOn: Build
-  Condition: Succeeded()
+  condition: Succeeded()
   jobs:
   - deployment: DeployonWindowsWebap
     displayName: Deploy on windows web app
